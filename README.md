@@ -2,16 +2,31 @@
 
 This is the implementation of the paper:
 
-Encoding Structure-Texture Relation with P-Net for Anomaly Detection in Retinal Images. ECCV 2020.
+Kang Zhou, Yuting Xiao, Jianlong Yang, Jun Cheng, Wen Liu, Weixin Luo, Zaiwang Gu, Jiang Liu, Shenghua Gao. Encoding Structure-Texture Relation with P-Net for Anomaly Detection in Retinal Images. ECCV 2020.
 
 using PyTorch.
+
+
+## Introduction
+
+![avatar](intro.png)
+
+The motivation of leveraging structure information for anomaly detection. The normal medical images are highly structured, while the regular structure is broken in abnormal images. For example, the lesions (denoted by black bounding box and red arrow in (a) of diabetic retinopathy destroy the blood vessel and histology layer in retina. Thus, in the abnormal retinal fundus image and optical coherence tomography (OCT) image, the lesions (denoted by red color in (b) and (c)) broke the structure. Moreover, this phenomenon agrees with the cognition of doctors. Motivated by this clinical observation, we suggest utilizing the structure information in anomaly detection. 
+
+![avatar](method.png) 
+
+The pipeline of our P-Net.
+
+![avatar](mvtech.png)      
+                           
+Qualitative results of the images in MV-Tech AD dataset.
 
 
 ## Getting started
 
 ### Environment
 Python 3.5.2  
-Pytorch 0.3.1  
+Pytorch 1.1.0  
 torchvision 0.2.1
 
 <!--### Getting the datasets-->
@@ -53,17 +68,17 @@ torchvision 0.2.1
 
 <!--We borrow tons of code from [NC-Net](https://github.com/ignacio-rocco/ncnet) and [WeakAlign](https://github.com/ignacio-rocco/weakalign).-->
 
-<!--## BibTeX -->
+## BibTeX 
 
-<!--If you use this code in your project, please cite our paper:-->
-<!--````-->
-<!--@inproceedings{huang2019dynamic,-->
-  <!--title={Dynamic Context Correspondence Network for Semantic Alignment},-->
-  <!--author={Huang, Shuaiyi and Wang, Qiuyue and Zhang, Songyang and Yan, Shipeng and He, Xuming},-->
-  <!--booktitle={Proceedings of the IEEE International Conference on Computer Vision},-->
-  <!--pages={2010--2019},-->
-  <!--year={2019}-->
-<!--}-->
-<!--````-->
+
+If you use this code in your project, please cite our paper:
+````
+@inproceedings{zhou2020encoding,
+  title={Encoding Structure-Texture Relation with P-Net for Anomaly Detection in Retinal Images},
+  author={Kang Zhou, Yuting Xiao, Jianlong Yang, Jun Cheng, Wen Liu, Weixin Luo, Zaiwang Gu, Jiang Liu, Shenghua Gao.},
+  booktitle={ECCV},
+  year={2020}
+}
+````
 
 

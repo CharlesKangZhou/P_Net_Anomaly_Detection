@@ -23,9 +23,9 @@ from utils.utils import adjust_lr, cuda_visible, print_args, save_ckpt, AverageM
 from utils.parser import ParserArgs
 
 
-class MLNetModel(nn.Module):
+class PNetModel(nn.Module):
     def __init__(self, args, ablation_mode=4):
-        super(MLNetModel, self).__init__()
+        super(PNetModel, self).__init__()
         self.args = args
 
         """
@@ -217,7 +217,7 @@ class RunMyModel(object):
         print_args(args)
         self.args = args
         self.new_lr = self.args.lr
-        self.model = MLNetModel(args)
+        self.model = PNetModel(args)
 
         if args.predict:
             self.test_acc()
@@ -698,12 +698,9 @@ class MultiTestForFigures(object):
 
         for ablation_mode in range(6):
             args.resume = 'v22_ablation_{}@fundus@woVGG/latest_ckpt.pth.tar'.format(ablation_mode)
-            self.model = MLNetModel(args)
+            self.model = PNetModel(args)
             self.test_cls(ablation_mode)
 
-        # args.resume = 'v21_fundusMLNet@cls@wo3nd@tuneVGG/latest_ckpt.pth.tar'
-        # self.model = MLNetModel(args)
-        # self.test_cls(ablation_mode=6, original_flag=True)
 
     def test_cls(self, ablation_mode, original_flag=False):
         # self.model.eval()

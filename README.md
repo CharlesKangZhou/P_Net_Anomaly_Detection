@@ -75,7 +75,7 @@ If you use this code in your project, please cite our paper:
 ````
 @inproceedings{zhou2020encoding,
   title={Encoding Structure-Texture Relation with P-Net for Anomaly Detection in Retinal Images},
-  author={Kang Zhou, Yuting Xiao, Jianlong Yang, Jun Cheng, Wen Liu, Weixin Luo, Zaiwang Gu, Jiang Liu, Shenghua Gao.},
+  author={Zhou, Kang and Xiao, Yuting and Yang, Jianlong and Cheng, Jun and Liu, Wen and Luo, Weixin and Gu, Zaiwang and Liu, Jiang and Gao, Shenghua.},
   booktitle={ECCV},
   year={2020}
 }

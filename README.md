@@ -6,6 +6,8 @@ Kang Zhou, Yuting Xiao, Jianlong Yang, Jun Cheng, Wen Liu, Weixin Luo, Zaiwang G
 
 using PyTorch.
 
+If you have any question, please feel free to contact us ({zhoukang, xiaoyt}@shanghaitech.edu.cn).
+
 
 ## Introduction
 
@@ -28,6 +30,13 @@ Qualitative results of the images in MV-Tech AD dataset.
 Python 3.5.2  
 Pytorch 1.1.0  
 torchvision 0.2.1
+
+### To Do
+- [ ] Update the P_Net_v1.
+
+- [ ] Update the dataloader of RESC dataset. 
+
+- [ ] Update the MVTec AD dataset.
 
 <!--### Getting the datasets-->
 

@@ -6,7 +6,7 @@ Kang Zhou, Yuting Xiao, Jianlong Yang, Jun Cheng, Wen Liu, Weixin Luo, Zaiwang G
 
 using PyTorch.
 
-If you have any question, please feel free to contact us ({zhoukang, xiaoyt}@shanghaitech.edu.cn).
+** If you have any question, please feel free to contact us ({zhoukang, xiaoyt}@shanghaitech.edu.cn). **
 
 
 ## Introduction
@@ -18,6 +18,10 @@ The motivation of leveraging structure information for anomaly detection. The no
 ![avatar](figures/method.png) 
 
 The pipeline of our P-Net.
+
+![avatar](figures/method_da.png) 
+
+(a) Structure extraction network with domain adaptation (DA). (b) The qualitative results of DA for OCT images. The structure of target image cannot be extracted well without DA. 
 
 ![avatar](figures/mvtech.png)      
                            

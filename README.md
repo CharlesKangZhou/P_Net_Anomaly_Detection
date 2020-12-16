@@ -6,7 +6,7 @@ Kang Zhou, Yuting Xiao, Jianlong Yang, Jun Cheng, Wen Liu, Weixin Luo, Zaiwang G
 
 using PyTorch.
 
-** If you have any question, please feel free to contact us ({zhoukang, xiaoyt}@shanghaitech.edu.cn). **
+**If you have any question, please feel free to contact us ({zhoukang, xiaoyt}@shanghaitech.edu.cn).**
 
 
 ## Introduction
@@ -15,7 +15,9 @@ using PyTorch.
 
 The motivation of leveraging structure information for anomaly detection. The normal medical images are highly structured, while the regular structure is broken in abnormal images. For example, the lesions (denoted by black bounding box and red arrow in (a) of diabetic retinopathy destroy the blood vessel and histology layer in retina. Thus, in the abnormal retinal fundus image and optical coherence tomography (OCT) image, the lesions (denoted by red color in (b) and (c)) broke the structure. Moreover, this phenomenon agrees with the cognition of doctors. Motivated by this clinical observation, we suggest utilizing the structure information in anomaly detection. 
 
-![avatar](figures/method.png) 
+## Method
+
+![avatar](figures/method.png)
 
 The pipeline of our P-Net.
 

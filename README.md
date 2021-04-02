@@ -8,6 +8,8 @@ using PyTorch.
 
 **If you have any question, please feel free to contact us ({zhoukang, xiaoyt}@shanghaitech.edu.cn).**
 
+**The implementation on MvTec dataset could be found in https://github.com/YutingXiao/P-Net_Mvtec_AD**
+
 
 ## Introduction
 
@@ -30,6 +32,16 @@ The pipeline of our P-Net.
 Qualitative results of the images in MV-Tech AD dataset.
 
 
+## Dataset
+The OCT dataset can be only used for the research community.
+
+The link of Baidu drive (password: 7bl0):
+https://pan.baidu.com/s/11BUG_FrYfjRCMg7T-zLeew  
+
+The link of Google drive:
+https://drive.google.com/drive/folders/1BHT-BIUm0QUyG56kfM03W9N2MrbuJB9c?usp=sharing
+
+
 ## Getting started
 
 ### Environment
@@ -38,11 +50,11 @@ Pytorch 1.1.0
 torchvision 0.2.1
 
 ### To Do
-- [ ] Update the P_Net_v1.
+- [x] Update the P_Net_v1.
 
-- [ ] Update the dataloader of RESC dataset. 
+- [x] Update the dataloader of RESC dataset. 
 
-- [ ] Update the MVTec AD dataset.
+- [ ] Merge the implementation on MVTec AD dataset (https://github.com/YutingXiao/P-Net_Mvtec_AD) in this branch.
 
 <!--### Getting the datasets-->
 

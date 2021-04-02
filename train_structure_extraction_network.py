@@ -11,9 +11,7 @@ import torch.nn.functional as F
 import torch.nn.parallel
 import torch.optim
 
-from dataloader.AnoFundusLoader import AnoDRIVE_Loader, AnoIDRID_Loader
-from dataloader.fundus_cls_dataloader import NewClsFundusDataloader
-from dataloader.OCT_DataLoader import ChengOCTloader, ChallengeOCTloader
+from dataloader.resc_dataloader import SourceOCTloader, ChallengeOCTloader
 from networks.unet import UNet_4mp
 from networks.discriminator import Discriminator
 from utils.gan_loss import AdversarialLoss
@@ -191,7 +189,7 @@ class RunMyModel(object):
                                                  scale=args.scale).load_for_seg()
 
         else:
-            self.source_loader = ChengOCTloader(data_root=args.cheng_oct,
+            self.source_loader = SourceOCTloader(data_root=args.cheng_oct,
                                                 batch=args.batch,
                                                 scale=args.scale,
                                                 flip=args.flip,

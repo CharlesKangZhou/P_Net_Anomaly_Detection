@@ -146,15 +146,7 @@ class outconv(nn.Module):
         x = self.conv(x)
         return x
 
-###
-# sparse coding
-###
-class cls_conv_d(down):
-    """
-    using down method
-    """
-    def __init__(self, in_ch, out_ch):
-        super(cls_conv_d, self).__init__()
+
 
 
 

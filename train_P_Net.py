@@ -13,8 +13,7 @@ import torch.nn as nn
 import torch.nn.parallel
 import torch.optim
 
-from dataloader.OCT_DataLoader import OCT_ClsDataloader
-from dataloader.fundus_cls_dataloader import NewClsFundusDataloader
+from dataloader.resc_dataloader import OCT_ClsDataloader
 from networks.P_Net_v1 import Strcutre_Extraction_Network, Image_Reconstruction_Network
 from networks.discriminator import Discriminator
 from utils.gan_loss import AdversarialLoss

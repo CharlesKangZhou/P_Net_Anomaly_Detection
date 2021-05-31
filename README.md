@@ -11,13 +11,13 @@ using PyTorch.
 **The implementation on MvTec dataset could be found in https://github.com/YutingXiao/P-Net_Mvtec_AD**
 
 
-## Introduction
+# Introduction
 
 ![avatar](figures/intro.png)
 
 The motivation of leveraging structure information for anomaly detection. The normal medical images are highly structured, while the regular structure is broken in abnormal images. For example, the lesions (denoted by black bounding box and red arrow in (a) of diabetic retinopathy destroy the blood vessel and histology layer in retina. Thus, in the abnormal retinal fundus image and optical coherence tomography (OCT) image, the lesions (denoted by red color in (b) and (c)) broke the structure. Moreover, this phenomenon agrees with the cognition of doctors. Motivated by this clinical observation, we suggest utilizing the structure information in anomaly detection. 
 
-## Method
+# Method
 
 ![avatar](figures/method.png)
 
@@ -32,7 +32,7 @@ The pipeline of our P-Net.
 Qualitative results of the images in MV-Tech AD dataset.
 
 
-## Dataset
+# Dataset
 The OCT dataset can be only used for the research community.
 
 The link of Baidu drive (password: 7bl0):
@@ -41,62 +41,39 @@ https://pan.baidu.com/s/11BUG_FrYfjRCMg7T-zLeew
 The link of Google drive:
 https://drive.google.com/drive/folders/1BHT-BIUm0QUyG56kfM03W9N2MrbuJB9c?usp=sharing
 
+# Getting started
 
-## Getting started
-
-### Environment
+## Environment
 Python 3.5.2  
 Pytorch 1.1.0  
 torchvision 0.2.1
 
-### To Do
-- [x] Update the P_Net_v1.
+<!--## Visdom-->
+<!--We use visdom to visualize the result-->
 
-- [x] Update the dataloader of RESC dataset. 
+## Train Structure Extraction Network
+We have provide a well trained strcture extraction model for OCT layer segmentation. The pre-trained model is in the str_models folder and named "oct_str_model.pth.tar".
 
-- [ ] Merge the implementation on MVTec AD dataset (https://github.com/YutingXiao/P-Net_Mvtec_AD) in this branch.
-
-<!--### Getting the datasets-->
-
-<!--The PF-Pascal dataset (used for training and evaluation) can be downloaded and unzipped by browsing to the `datasets/pf-pascal/` folder and running `download.sh`.-->
-
-<!--The PF-Willow and TSS dataset (used for evaluation) can be downloaded by browsing to the `datasets/` folder and run `download_datasets.py`. The datasets will be under `datasets/proposal-flow-willow` and `datasets/tss`-->
-
-
-
-<!--### Getting the trained models-->
-
-<!--The trained models trained on PF-Pascal (`best_dccnet.pth.tar`) can be dowloaded by browsing to the `trained_models/` folder and running `download.sh` (comming soon).-->
+## Train P-Net
+````
+python train_P_Net.py      \
+    --version OCT \
+    --n_epochs 800  --save_freq 30  --lr 0.001    \
+    --batch 8  --scale 224   \
+    --lamd_gen 0.1  --lamd_pixel 1  --lamd_mask 0.5  \
+    --gpu 1  --data_modality oct 
+````
 
 
-<!--## Training-->
+<!--# To Do-->
+<!--- [x] Update the P_Net_v1.-->
 
-<!--To train a model, run `train_dccnet.sh` under `scripts` folder to reproduce our results.-->
+<!--- [x] Update the dataloader of RESC dataset. -->
 
+<!--- [ ] Merge the implementation on MVTec AD dataset (https://github.com/YutingXiao/P-Net_Mvtec_AD) in this branch.-->
 
-<!--## Evaluation-->
-
-<!--Evaluation for PF-Pascal and PF-Willow is implemented in the `eval_pf_pascal.py` and `eval_pf_willow.py` file respectively. You can run the evaluation in the following way: -->
-
-<!--```bash-->
-<!--python eval_pf_pascal.py --checkpoint trained_models/[checkpoint name]-->
-<!--```-->
-
-<!--Evaluation for TSS is implemented in the `eval_tss.py` file. You can run the evaluation in the following way: -->
-
-<!--```bash-->
-<!--python eval_tss.py --checkpoint trained_models/[checkpoint name]-->
-<!--```-->
-
-<!--This will generate a series of flow files in the `datasets/dccnet_results` folder that then need to be fed to the TSS evaluation Matlab code. -->
-<!--In order to run the Matlab evaluation, you need to clone the [TSS repo](https://github.com/t-taniai/TSS_CVPR2016_EvaluationKit) and follow the corresponding instructions.-->
-
-<!--## Acknwoledgement-->
-
-<!--We borrow tons of code from [NC-Net](https://github.com/ignacio-rocco/ncnet) and [WeakAlign](https://github.com/ignacio-rocco/weakalign).-->
 
 ## BibTeX 
-
 
 If you use this code in your project, please cite our paper:
 ````

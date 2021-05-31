@@ -67,10 +67,12 @@ class PNetModel(nn.Module):
                                             betas=(args.b1, args.b2))
 
         # load 1-st ckpts
-        if self.args.server == 'ai':
-            seg_ckpt_root = os.path.join('/root/workspace', args.project, 'save_models')
-        else:
-            seg_ckpt_root = os.path.join('/home/imed/new_disk/workspace', args.project, 'save_models')
+        # if self.args.server == 'ai':
+        #     seg_ckpt_root = os.path.join('/root/workspace', args.project, 'save_models')
+        # else:
+        #     seg_ckpt_root = os.path.join('/home/imed/new_disk/workspace', args.project, 'save_models')
+
+        seg_ckpt_root = 'str_models'
         if self.args.data_modality == 'fundus':
             if self.args.DA_ablation_mode_isee == 0:
                 _g_zero_point = '0'
@@ -83,11 +85,12 @@ class PNetModel(nn.Module):
                 raise NotImplementedError('error')
 
             seg_ckpt_path = os.path.join(seg_ckpt_root, '1st_fundus_seg_g_{}.pth.tar'.format(_g_zero_point))
-
             ## orginal seg mdel
             # seg_ckpt_path = os.path.join(seg_ckpt_root, '1st_fundus_seg_vgg.pth.tar')
+
+        # OCT
         else:
-            seg_ckpt_path = os.path.join(seg_ckpt_root, '1st_oct_seg.pth.tar')
+            seg_ckpt_path = os.path.join(seg_ckpt_root, 'oct_str_model.pth.tar')
 
         if os.path.isfile(seg_ckpt_path):
             print("=> loading G1 checkpoint")
@@ -97,6 +100,9 @@ class PNetModel(nn.Module):
                   .format(checkpoint['epoch'], seg_ckpt_path))
         else:
             raise ValueError("=> no checkpoint found at '{}'".format(seg_ckpt_path))
+
+        # print('hello')
+        # pdb.set_trace()
 
         # Optionally resume from a checkpoint
         if self.args.resume:
@@ -209,7 +215,7 @@ class RunMyModel(object):
             # Challenge OCT dataset for classification
             # image, [case_name, image_name]
             self.train_loader, self.normal_test_loader, self.oct_abnormal_loader = OCT_ClsDataloader(
-                                                    data_root=args.challenge_oct,
+                                                       data_root=args.challenge_oct,
                                                        batch=args.batch,
                                                        scale=args.scale).data_load()
 

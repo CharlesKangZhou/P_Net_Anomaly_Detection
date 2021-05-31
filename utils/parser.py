@@ -65,11 +65,11 @@ class ParserArgs(object):
         # model hyper-parameters
         self.parser.add_argument('--start_epoch', default=0, type=int,
                             help='numbet of start epoch to run')
-        self.parser.add_argument('--n_epochs', default=300, type=int, metavar='N',
+        self.parser.add_argument('--n_epochs', default=800, type=int, metavar='N',
                             help='number of total epochs to run')
-        self.parser.add_argument('--batch', default=16, type=int,
+        self.parser.add_argument('--batch', default=8, type=int,
                             metavar='N', help='mini-batch size')
-        self.parser.add_argument('--lr', '--learning-rate', default=0.01, type=float,
+        self.parser.add_argument('--lr', '--learning-rate', default=0.001, type=float,
                             metavar='LR', help='initial learning rate')
         self.parser.add_argument('--momentum', default=0.9, type=float, metavar='M',
                             help='momentum')
@@ -89,7 +89,7 @@ class ParserArgs(object):
         self.parser.add_argument('--ablation_mode', default=6, choices=[0, 2, 4],
                             type=int, help='ablation study for multi-level feature')
         self.parser.add_argument('--lamd_mask_fusion', default=0, type=float,)
-        self.parser.add_argument('--stage3_epoch', default=0, type=int)
+        self.parser.add_argument('--stage3_epoch', default=20, type=int)
         self.parser.add_argument('--lamd_mask', default=10, type=float,
                                  help='range = (0, 1)')
 
@@ -108,7 +108,8 @@ class ParserArgs(object):
         ws_name = args.node.split('-')[0]
         # zhoukang_XX,  zhoukang-XX---------------------------------------------------------------------------------+
         if ws_name == 'zhoukang' or len(ws_name) > 8:
-           pass
+            args.vis_server = 'http://10.10.10.100'
+            args.challenge_oct = os.path.join(self.ai_data_root, 'dataset_eye/Eye_Public_Dataset/ai_oct_challenge')
         else:
             # imed-007
             args.server = 'ws'
